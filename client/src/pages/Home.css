@@ -54,3 +54,31 @@
 .btn-view {
   background-color: blue;
 }
+
+.disabled {
+  display: none;
+}
+
+.input {
+  
+  display: flex;
+  justify-content: center;
+  margin-bottom: -40px;
+
+}
+
+@media (max-width: 690px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    text-align: center;
+  }
+
+  thead tr {
+    display: none;
+  }
+}

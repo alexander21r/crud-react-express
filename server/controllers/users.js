@@ -29,6 +29,7 @@ export const updateUser = (req, res) => {
   user.name = req.body.name;
   user.email = req.body.email;
   user.contact = req.body.contact;
+  user.city = req.body.city;
 
-  res.send("User updated")
+  res.send("User updated");
 };

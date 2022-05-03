@@ -1,11 +1,12 @@
 .card {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   border: 1px solid red;
   align-content: center;
   margin: 0 auto;
   margin-top: 70px;
+  word-wrap: break-word;
 }
 
 .card-header {
@@ -22,4 +23,10 @@
 .container {
   padding: 4px 16px;
   text-align: center;
+}
+
+@media (max-width: 568px) {
+  .card {
+    width: 100%;
+  }
 }

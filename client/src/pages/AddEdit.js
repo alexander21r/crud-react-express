@@ -1,4 +1,4 @@
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./AddEdit.css";
@@ -9,11 +9,12 @@ const initialState = {
   name: "",
   email: "",
   contact: "",
+  city: "",
 };
 const AddEdit = () => {
   const [state, setState] = useState(initialState);
 
-  const { name, email, contact } = state;
+  const { name, email, contact, city } = state;
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -47,7 +48,7 @@ const AddEdit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !email || !contact) {
+    if (!name || !email || !contact || !city) {
       toast.error("Fill in all fields");
     } else {
       if (!id) {
@@ -66,32 +67,42 @@ const AddEdit = () => {
 
   return (
     <div>
+      <h1 id="errorMessage"></h1>
       <form onSubmit={handleSubmit} className="form">
         <input
-          type="text "
+          type="text"
           id="name"
-          name="name "
+          name="name"
           placeholder="Enter name"
           onChange={handleInputChange}
           value={name}
           className="inputs"
         />
         <input
-          type="email "
+          type="email"
           id="email"
-          name="email "
+          name="email"
           placeholder="Enter email"
           onChange={handleInputChange}
           value={email}
           className="inputs"
         />
         <input
-          type="number "
+          type="number"
           id="contact"
-          name="contact "
+          name="contact"
           placeholder="Enter contact number"
           onChange={handleInputChange}
           value={contact}
+          className="inputs"
+        />
+        <input
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Enter city"
+          onChange={handleInputChange}
+          value={city}
           className="inputs"
         />
         <input type="submit" value={id ? "Update" : "Add"} />

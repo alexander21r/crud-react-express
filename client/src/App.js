@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <ToastContainer position="top-center"/>
+        <ToastContainer position="top-center" />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/add" element={<AddEdit />} />
