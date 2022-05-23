@@ -1,7 +1,7 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import "./View.css"
+import "../stylesheets/View.css";
 
 const View = () => {
   const [user, setUser] = useState(null);

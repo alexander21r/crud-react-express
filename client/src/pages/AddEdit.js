@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./AddEdit.css";
+import "../stylesheets/AddEdit.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -18,19 +18,6 @@ const AddEdit = () => {
   const navigate = useNavigate();
 
   const { id } = useParams();
-
-  useEffect(() => {
-    if (id) {
-      getSingleUser(id);
-    }
-  }, [id]);
-
-  const getSingleUser = async (id) => {
-    const res = await axios.get(`http://localhost:5000/user/${id}`);
-    if (res.status === 200) {
-      setState({ ...res.data[0] });
-    }
-  };
 
   const addUser = async (data) => {
     const res = await axios.post("http://localhost:5000/user", data);

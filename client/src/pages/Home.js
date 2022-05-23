@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "../stylesheets/Home.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -58,19 +58,17 @@ const Home = () => {
     <div>
       <h1 id="errorMessage"></h1>
       <div className="input">
-            <input
-            placeholder="Filter by city"
-              type="text"
-              onChange={foundPersonsByCity}
-              id="foundPersonsByCity"
-              className={!data.length ? "disabled" : ""}
-            />
-          </div>
+        <input
+          placeholder="Filter by city"
+          type="text"
+          onChange={foundPersonsByCity}
+          id="foundPersonsByCity"
+          className={!data.length ? "disabled" : ""}
+        />
+      </div>
 
       <table className="styled-table">
         <thead>
-         
-
           <tr className={!data.length ? "disabled" : ""}>
             <th>Number</th>
             <th>Name</th>
