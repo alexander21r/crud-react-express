@@ -6,6 +6,7 @@ const Header = () => {
   const [activeTab, setActiveTab] = useState("Home");
   const location = useLocation();
 
+  // Changing active tab depending on url path
   useEffect(() => {
     if (location.pathname === "/") {
       setActiveTab("Home");

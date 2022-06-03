@@ -12,6 +12,7 @@ const Home = () => {
     getUsers();
   }, []);
 
+  // Fetching all users and cathing errors
   const getUsers = async () => {
     try {
       const res = await axios.get("http://localhost:5000/users");
@@ -28,6 +29,7 @@ const Home = () => {
     }
   };
 
+  // Deleting user with id
   const onDeleteUser = async (id) => {
     if (window.confirm("Are your sure you want to delete")) {
       const res = await axios.delete(`http://localhost:5000/user/${id}`);
@@ -38,6 +40,7 @@ const Home = () => {
     }
   };
 
+  // Filter by city function
   const foundPersonsByCity = () => {
     let inputField = document
       .querySelector("#foundPersonsByCity")

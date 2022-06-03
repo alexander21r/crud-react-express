@@ -19,6 +19,7 @@ const AddEdit = () => {
 
   const { id } = useParams();
 
+  // Adding user with data from inputfields
   const addUser = async (data) => {
     const res = await axios.post("http://localhost:5000/user", data);
     if (res.status === 200) {
@@ -26,6 +27,7 @@ const AddEdit = () => {
     }
   };
 
+  // Updating user with id
   const updateUser = async (data, id) => {
     const res = await axios.put(`http://localhost:5000/user/${id}`, data);
     if (res.status === 200) {
@@ -47,6 +49,7 @@ const AddEdit = () => {
     }
   };
 
+  // Getting current value from inputfields and store it in state
   const handleInputChange = (e) => {
     let { name, value } = e.target;
     setState({ ...state, [name]: value });

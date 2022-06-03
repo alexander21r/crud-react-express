@@ -9,6 +9,7 @@ export const getUsers = (req, res) => {
 export const createUser = (req, res) => {
   const user = req.body;
 
+  // Adding uniqe id to every new user
   users.push({ ...user, id: uuid() });
   res.send("User added");
 };
